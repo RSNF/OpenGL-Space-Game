@@ -1,4 +1,5 @@
 void moveY(float y) {
+
     corpo[0].y+=y;
     corpo[1].y+=y;
     corpo[2].y+=y;
@@ -32,6 +33,7 @@ void moveY(float y) {
 }
 
 void moveX(float x) {
+
     corpo[0].x+=x;
     corpo[1].x+=x;
     corpo[2].x+=x;
@@ -65,27 +67,51 @@ void moveX(float x) {
 }
 
 void keyEvent(unsigned char key, int x, int y) {
+
     switch (key) {
         case 'w':
-            moveY(0.5);
+            if (boxBico.topLeft.y != 25) {
+                moveY(0.5);
+            }
             break;
         case 's':
-            moveY(-0.5);
+            if (boxCorpo.bottomLeft.y != -25) {
+                moveY(-0.5);
+            }
             break;
         case 'a':
-            moveX(-0.5);
+            if (boxAsaEsquerda.bottomLeft.x != -25) {
+                moveX(-0.5);
+            }
             break;
         case 'd':
-            moveX(0.5);
+            if (boxAsaDireita.bottomRight.x != 25) {
+                moveX(0.5);
+            }
             break;
         default:
             break;
+    }
+
+    isColidindo = checkCollisions();
+
+    if (isColidindo) {
+        vidas--;
+
+        restartPosition();
+    } else {
+        noPlaneta = checkCollisionPlaneta();
     }
 
     glutPostRedisplay();
 }
 
 void keyEventSpecial(int key, int x, int y) {
+
+    if (vidas == 0) {
+        return;
+    }
+
     switch (key) {
         case GLUT_KEY_UP:
             moveY(0.5);
@@ -101,6 +127,20 @@ void keyEventSpecial(int key, int x, int y) {
             break;
         default:
             break;
+    }
+
+    isColidindo = checkCollisions();
+
+    if (isColidindo) {
+        vidas--;
+
+        restartPosition();
+    } else {
+        noPlaneta = checkCollisionPlaneta();
+
+        if (noPlaneta) {
+            cout << "No planeja" << endl;
+        }
     }
 
     glutPostRedisplay();

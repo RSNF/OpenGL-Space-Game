@@ -3,6 +3,12 @@ struct coordinate {
     float y;
 };
 
+struct rgbValues {
+    float r;
+    float g;
+    float b;
+};
+
 struct boundingBox {
     coordinate topLeft;
     coordinate topRight;

@@ -1,10 +1,16 @@
+using namespace std;
+
 #include <stdlib.h>
+#include <iostream>
 #include <GL/glut.h>
 #include "includes/types.h"
 #include "includes/star.h"
 #include "includes/foguete.h"
-#include "includes/controllers/movement.h"
+#include "includes/planeta.h"
+#include "includes/hud.h"
 #include "includes/collisions.h"
+#include "includes/events/movement.h"
+#include "includes/events/recolour.h"
 
 void init();
 void drawGame();
@@ -20,6 +26,7 @@ int main(int argc, char **argv) {
     glutDisplayFunc(drawGame);
     glutKeyboardFunc(keyEvent);
     glutSpecialFunc(keyEventSpecial);
+    glutMouseFunc(mouseEvent);
 
     glutMainLoop();
 
@@ -36,9 +43,18 @@ void init() {
 void drawGame() {
 
     glClear(GL_COLOR_BUFFER_BIT);
-    drawStar();
-    drawFoguete();
-    drawWireBox();
+    
+    if (vidas == 0) {
+        drawGameOver();
+    } else if (!noPlaneta) {
+        drawStars();
+        drawFoguete();
+        drawWireBox();
+        drawHUD();
+        drawCircle();
+    } else {
+        drawWin();
+    }
 
     glFlush();
 }
