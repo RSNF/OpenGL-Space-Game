@@ -68,8 +68,8 @@ void drawStars() {
 
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribX(-20, 20);
-    std::uniform_int_distribution<int> distribY(-8, 10);
+    std::uniform_int_distribution<int> distribX(-45, 45);
+    std::uniform_int_distribution<int> distribY(-30, 30);
 
     int x;
     int y;

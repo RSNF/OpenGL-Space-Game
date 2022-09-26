@@ -1,8 +1,16 @@
+/*
+ * Universidade Estadual do Sudoeste da Bahia - UESB
+ * 
+ * Discentes:   Patrick Mota Pinto Silva
+ *              Raimundo Santana Novaes Filho
+ * 
+ * Doscente:    Elienai Bittencourt Batista Mota
+ */
+
 using namespace std;
 
-#include <stdlib.h>
 #include <iostream>
-#include <windows.h>
+#include <stdlib.h>
 #include <GL/glut.h>
 #include "includes/types.h"
 #include "includes/star.h"
@@ -37,7 +45,7 @@ int main(int argc, char **argv) {
 void init() {
 
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(-25.0, 25.0, -25.0, 25.0);
+    gluOrtho2D(-50.0, 50.0, -50.0, 50.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
@@ -50,8 +58,8 @@ void drawGame() {
     } else if (!noPlaneta) {
         drawStars();
         drawFoguete();
-        drawWireBox();
         drawHUD();
+        drawWireBox();
         drawCircle();
     } else {
         drawWin();

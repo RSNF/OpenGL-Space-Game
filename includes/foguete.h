@@ -1,54 +1,54 @@
 boundingBox boxBico = {
-    {-1.0, -12.0},
-    {1.0, -12.0},
-    {-1.0, -14.0},
-    {1.0, -14.0}
+    {-1.0, -32.0},
+    {1.0, -32.0},
+    {-1.0, -34.0},
+    {1.0, -34.0}
 };
 
 boundingBox boxCorpo = {
-    {-1.0, -14.0},
-    {1.0, -14.0},
-    {-1.0, -19.0},
-    {1.0, -19.0}
+    {-1.0, -34.0},
+    {1.0, -34.0},
+    {-1.0, -39.0},
+    {1.0, -39.0}
 };
 
 boundingBox boxAsaEsquerda = {
-    {-2.5, -17.0},
-    {-1.0, -17.0},
-    {-2.5, -19.0},
-    {-1.0, -19.0}
+    {-2.5, -37.0},
+    {-1.0, -37.0},
+    {-2.5, -39.0},
+    {-1.0, -39.0}
 };
 
 boundingBox boxAsaDireita = {
-    {1.0, -17.0},
-    {2.5, -17.0},
-    {1.0, -19.0},
-    {2.5, -19.0}
+    {1.0, -37.0},
+    {2.5, -37.0},
+    {1.0, -39.0},
+    {2.5, -39.0}
 };
 
 coordinate bico[3] = {
-    {-1.0, -14.0},
-    {0.0, -12.0},
-    {1.0, -14.0}
+    {-1.0, -34.0},
+    {0.0, -32.0},
+    {1.0, -34.0}
 };
 
 coordinate corpo[4] = {
-    {-1.0, -19.0},
-    {1.0, -19.0},
-    {1.0, -14.0},
-    {-1.0, -14.0}
+    {-1.0, -39.0},
+    {1.0, -39.0},
+    {1.0, -34.0},
+    {-1.0, -34.0}
 };
 
 coordinate asaEsquerda[3] = {
-    {-1.0, -19.0},
-    {-2.5, -19.0},
-    {-1.0, -17.0}
+    {-1.0, -39.0},
+    {-2.5, -39.0},
+    {-1.0, -37.0}
 };
 
 coordinate asaDireita[3] = {
-    {1.0, -19.0},
-    {2.5, -19.0},
-    {1.0, -17.0}
+    {1.0, -39.0},
+    {2.5, -39.0},
+    {1.0, -37.0}
 };
 
 rgbValues coresFoguete[4] = {
@@ -118,40 +118,40 @@ void AsaDireita() {
 
 void restartPosition() {
 
-    bico[0] = {-1.0, -14.0};
-    bico[1] = {0.0, -12.0};
-    bico[2] = {1.0, -14.0};
+    bico[0] = {-1.0, -34.0};
+    bico[1] = {0.0, -32.0};
+    bico[2] = {1.0, -34.0};
 
-    corpo[0] = {-1.0, -19.0};
-    corpo[1] = {1.0, -19.0};
-    corpo[2] = {1.0, -14.0};
-    corpo[3] = {-1.0, -14.0};
+    corpo[0] = {-1.0, -39.0};
+    corpo[1] = {1.0, -39.0};
+    corpo[2] = {1.0, -34.0};
+    corpo[3] = {-1.0, -34.0};
 
-    asaEsquerda[0] = {-1.0, -19.0};
-    asaEsquerda[1] = {-2.5, -19.0};
-    asaEsquerda[2] = {-1.0, -17.0};
+    asaEsquerda[0] = {-1.0, -39.0};
+    asaEsquerda[1] = {-2.5, -39.0};
+    asaEsquerda[2] = {-1.0, -37.0};
 
-    asaDireita[0] = {1.0, -19.0};
-    asaDireita[1] = {2.5, -19.0};
-    asaDireita[2] = {1.0, -17.0};
+    asaDireita[0] = {1.0, -39.0};
+    asaDireita[1] = {2.5, -39.0};
+    asaDireita[2] = {1.0, -37.0};
 
-    boxBico.topLeft = {-1.0, -12.0};
-    boxBico.topRight = {1.0, -12.0};
-    boxBico.bottomLeft = {-1.0, -14.0};
-    boxBico.bottomRight = {1.0, -14.0};
+    boxBico.topLeft = {-1.0, -32.0};
+    boxBico.topRight = {1.0, -32.0};
+    boxBico.bottomLeft = {-1.0, -34.0};
+    boxBico.bottomRight = {1.0, -34.0};
 
-    boxCorpo.topLeft = {-1.0, -14.0};
-    boxCorpo.topRight = {1.0, -14.0};
-    boxCorpo.bottomLeft = {-1.0, -19.0};
-    boxCorpo.bottomRight = {1.0, -19.0};
+    boxCorpo.topLeft = {-1.0, -34.0};
+    boxCorpo.topRight = {1.0, -34.0};
+    boxCorpo.bottomLeft = {-1.0, -39.0};
+    boxCorpo.bottomRight = {1.0, -39.0};
 
-    boxAsaEsquerda.topLeft = {-2.5, -17.0};
-    boxAsaEsquerda.topRight = {-1.0, -17.0};
-    boxAsaEsquerda.bottomLeft = {-2.5, -19.0};
-    boxAsaEsquerda.bottomRight = {-1.0, -19.0};
+    boxAsaEsquerda.topLeft = {-2.5, -37.0};
+    boxAsaEsquerda.topRight = {-1.0, -37.0};
+    boxAsaEsquerda.bottomLeft = {-2.5, -39.0};
+    boxAsaEsquerda.bottomRight = {-1.0, -39.0};
 
-    boxAsaDireita.topLeft = {2.5, -17.0};
-    boxAsaDireita.topRight = {1.0, -17.0};
-    boxAsaDireita.bottomLeft = {2.5, -19.0};
-    boxAsaDireita.bottomRight = {1.0, -19.0};
+    boxAsaDireita.topLeft = {1.0, -37.0};
+    boxAsaDireita.topRight = {2.5, -37.0};
+    boxAsaDireita.bottomLeft = {1.0, -39.0};
+    boxAsaDireita.bottomRight = {2.5, -39.0};
 }

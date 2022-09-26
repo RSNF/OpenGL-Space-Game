@@ -66,42 +66,55 @@ void moveX(float x) {
     }
 }
 
+float moveStep = 1.0;
+
 void keyEvent(unsigned char key, int x, int y) {
 
     switch (key) {
         case 'w':
-            if (boxBico.topLeft.y < 25) {
-                moveY(0.5);
+            if (boxBico.topLeft.y < 50) {
+                moveY(moveStep);
             }
             break;
         case 's':
-            if (boxCorpo.bottomLeft.y > -25) {
-                moveY(-0.5);
+            if (boxCorpo.bottomLeft.y > -50) {
+                moveY(-moveStep);
             }
             break;
         case 'a':
-            if (boxAsaEsquerda.bottomLeft.x > -25) {
-                moveX(-0.5);
+            if (boxAsaEsquerda.bottomLeft.x > -50) {
+                moveX(-moveStep);
             }
             break;
         case 'd':
-            if (boxAsaDireita.bottomRight.x < 25) {
-                moveX(0.5);
+            if (boxAsaDireita.bottomRight.x < 50) {
+                moveX(moveStep);
             }
             break;
         default:
             break;
     }
 
-    isColidindo = checkCollisions();
+    for (int i = 0; i < 10; i++) {
+        isColidindo = false;
+        checkCollision(boxStars[i], boxBico);
+        checkCollision(boxStars[i], boxCorpo);
+        checkCollision(boxStars[i], boxAsaEsquerda);
+        checkCollision(boxStars[i], boxAsaDireita);
 
-    if (isColidindo) {
-        vidas--;
+        if (isColidindo) {
+            vidas--;
 
-        restartPosition();
-    } else {
-        noPlaneta = checkCollisionPlaneta();
+            restartPosition();
+
+            break;
+        } 
     }
+
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxBico);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxCorpo);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxAsaEsquerda);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxAsaDireita);
 
     glutPostRedisplay();
 }
@@ -114,42 +127,49 @@ void keyEventSpecial(int key, int x, int y) {
 
     switch (key) {
         case GLUT_KEY_UP:
-            if (boxBico.topLeft.y < 25) {
-                moveY(0.5);
+            if (boxBico.topLeft.y < 50) {
+                moveY(moveStep);
             }
             break;
         case GLUT_KEY_DOWN:
-            if (boxCorpo.bottomLeft.y > -25) {
-                moveY(-0.5);
+            if (boxCorpo.bottomLeft.y > -50) {
+                moveY(-moveStep);
             }
             break;
         case GLUT_KEY_LEFT:
-            if (boxAsaEsquerda.bottomLeft.x > -25) {
-                moveX(-0.5);
+            if (boxAsaEsquerda.bottomLeft.x > -50) {
+                moveX(-moveStep);
             }
             break;
         case GLUT_KEY_RIGHT:
-            if (boxAsaDireita.bottomRight.x < 25) {
-                moveX(0.5);
+            if (boxAsaDireita.bottomRight.x < 50) {
+                moveX(moveStep);
             }
             break;
         default:
             break;
     }
 
-    isColidindo = checkCollisions();
+    for (int i = 0; i < 10; i++) {
+        isColidindo = false;
+        checkCollision(boxStars[i], boxBico);
+        checkCollision(boxStars[i], boxCorpo);
+        checkCollision(boxStars[i], boxAsaEsquerda);
+        checkCollision(boxStars[i], boxAsaDireita);
 
-    if (isColidindo) {
-        vidas--;
+        if (isColidindo) {
+            vidas--;
 
-        restartPosition();
-    } else {
-        noPlaneta = checkCollisionPlaneta();
-
-        if (noPlaneta) {
-            cout << "No planeja" << endl;
-        }
+            restartPosition();
+            
+            break;
+        } 
     }
+
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxBico);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxCorpo);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxAsaEsquerda);
+    noPlaneta = noPlaneta || checkCollision(boxPlaneta, boxAsaDireita);
 
     glutPostRedisplay();
 }

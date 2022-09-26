@@ -1,16 +1,16 @@
 #include <math.h>
 
 boundingBox boxPlaneta = {
-    {-2, 22},
-    {2, 22},
-    {-2, 18},
-    {2, 18}
+    {-2, 42},
+    {2, 42},
+    {-2, 38},
+    {2, 38}
 };
 
 void drawCircle() {
     float r = 2;
     float x = 0;
-    float y = 20;
+    float y = 40;
 
     glPushMatrix();
 

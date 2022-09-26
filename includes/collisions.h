@@ -1,71 +1,14 @@
-bool checkCollisions() {
+bool checkCollision(boundingBox boxOne, boundingBox boxTwo) {
 
     bool eixoX;
     bool eixoY;
 
-    for (int i = 0; i < 10; i++) {
-        eixoX = boxStars[i].bottomLeft.x + (boxStars[i].bottomRight.x - boxStars[i].bottomLeft.x) > boxBico.bottomLeft.x && boxBico.bottomLeft.x + (boxBico.bottomRight.x - boxBico.bottomLeft.x) > boxStars[i].bottomLeft.x;
-        eixoY = boxStars[i].bottomLeft.y + (boxStars[i].topLeft.y - boxStars[i].bottomLeft.y) > boxBico.bottomLeft.y && boxBico.bottomLeft.y + (boxBico.topLeft.y - boxBico.bottomLeft.y) > boxStars[i].bottomLeft.y;
-        if (eixoX && eixoY) {
-            return eixoX && eixoY;
-        }
-    }
-
-    for (int i = 0; i < 10; i++) {
-        eixoX = boxStars[i].bottomLeft.x + (boxStars[i].bottomRight.x - boxStars[i].bottomLeft.x) > boxCorpo.bottomLeft.x && boxCorpo.bottomLeft.x + (boxCorpo.bottomRight.x - boxCorpo.bottomLeft.x) > boxStars[i].bottomLeft.x;
-        eixoY = boxStars[i].bottomLeft.y + (boxStars[i].topLeft.y - boxStars[i].bottomLeft.y) > boxCorpo.bottomLeft.y && boxCorpo.bottomLeft.y + (boxCorpo.topLeft.y - boxCorpo.bottomLeft.y) > boxStars[i].bottomLeft.y;
-        if (eixoX && eixoY) {
-            return eixoX && eixoY;
-        }
-    }
-
-    for (int i = 0; i < 10; i++) {
-        eixoX = boxStars[i].bottomLeft.x + (boxStars[i].bottomRight.x - boxStars[i].bottomLeft.x) > boxAsaEsquerda.bottomLeft.x && boxAsaEsquerda.bottomLeft.x + (boxAsaEsquerda.bottomRight.x - boxAsaEsquerda.bottomLeft.x) > boxStars[i].bottomLeft.x;
-        eixoY = boxStars[i].bottomLeft.y + (boxStars[i].topLeft.y - boxStars[i].bottomLeft.y) > boxAsaEsquerda.bottomLeft.y && boxAsaEsquerda.bottomLeft.y + (boxAsaEsquerda.topLeft.y - boxAsaEsquerda.bottomLeft.y) > boxStars[i].bottomLeft.y;
-        if (eixoX && eixoY) {
-            return eixoX && eixoY;
-        }
-    }
-
-    for (int i = 0; i < 10; i++) {
-        eixoX = boxStars[i].bottomLeft.x + (boxStars[i].bottomRight.x - boxStars[i].bottomLeft.x) > boxAsaDireita.bottomLeft.x && boxAsaDireita.bottomLeft.x + (boxAsaDireita.bottomRight.x - boxAsaDireita.bottomLeft.x) > boxStars[i].bottomLeft.x;
-        eixoY = boxStars[i].bottomLeft.y + (boxStars[i].topLeft.y - boxStars[i].bottomLeft.y) > boxAsaDireita.bottomLeft.y && boxAsaDireita.bottomLeft.y + (boxAsaDireita.topLeft.y - boxAsaDireita.bottomLeft.y) > boxStars[i].bottomLeft.y;
-        if (eixoX && eixoY) {
-            return eixoX && eixoY;
-        }
-    }
-    
-    return eixoX && eixoY;
-}
-
-bool checkCollisionPlaneta() {
-
-    bool eixoX;
-    bool eixoY;
-
-    eixoX = boxPlaneta.bottomLeft.x + (boxPlaneta.bottomRight.x - boxPlaneta.bottomLeft.x) > boxBico.bottomLeft.x && boxBico.bottomLeft.x + (boxBico.bottomRight.x - boxBico.bottomLeft.x) > boxPlaneta.bottomLeft.x;
-    eixoY = boxPlaneta.bottomLeft.y + (boxPlaneta.topLeft.y - boxPlaneta.bottomLeft.y) > boxBico.bottomLeft.y && boxBico.bottomLeft.y + (boxBico.topLeft.y - boxBico.bottomLeft.y) > boxPlaneta.bottomLeft.y;
+    eixoX = boxOne.bottomLeft.x + (boxOne.bottomRight.x - boxOne.bottomLeft.x) > boxTwo.bottomLeft.x && boxTwo.bottomLeft.x + (boxTwo.bottomRight.x - boxTwo.bottomLeft.x) > boxOne.bottomLeft.x;
+    eixoY = boxOne.bottomLeft.y + (boxOne.topLeft.y - boxOne.bottomLeft.y) > boxTwo.bottomLeft.y && boxTwo.bottomLeft.y + (boxTwo.topLeft.y - boxTwo.bottomLeft.y) > boxOne.bottomLeft.y;
 
     if (eixoX && eixoY) {
-        return true;
+        isColidindo = true;
     }
-
-    eixoX = boxPlaneta.bottomLeft.x + (boxPlaneta.bottomRight.x - boxPlaneta.bottomLeft.x) > boxCorpo.bottomLeft.x && boxCorpo.bottomLeft.x + (boxCorpo.bottomRight.x - boxCorpo.bottomLeft.x) > boxPlaneta.bottomLeft.x;
-    eixoY = boxPlaneta.bottomLeft.y + (boxPlaneta.topLeft.y - boxPlaneta.bottomLeft.y) > boxCorpo.bottomLeft.y && boxCorpo.bottomLeft.y + (boxCorpo.topLeft.y - boxCorpo.bottomLeft.y) > boxPlaneta.bottomLeft.y;
-
-    if (eixoX && eixoY) {
-        return true;
-    }
-
-    eixoX = boxPlaneta.bottomLeft.x + (boxPlaneta.bottomRight.x - boxPlaneta.bottomLeft.x) > boxAsaEsquerda.bottomLeft.x && boxAsaEsquerda.bottomLeft.x + (boxAsaEsquerda.bottomRight.x - boxAsaEsquerda.bottomLeft.x) > boxPlaneta.bottomLeft.x;
-    eixoY = boxPlaneta.bottomLeft.y + (boxPlaneta.topLeft.y - boxPlaneta.bottomLeft.y) > boxAsaEsquerda.bottomLeft.y && boxAsaEsquerda.bottomLeft.y + (boxAsaEsquerda.topLeft.y - boxAsaEsquerda.bottomLeft.y) > boxPlaneta.bottomLeft.y;
-
-    if (eixoX && eixoY) {
-        return true;
-    }
-
-    eixoX = boxPlaneta.bottomLeft.x + (boxPlaneta.bottomRight.x - boxPlaneta.bottomLeft.x) > boxAsaDireita.bottomLeft.x && boxAsaDireita.bottomLeft.x + (boxAsaDireita.bottomRight.x - boxAsaDireita.bottomLeft.x) > boxPlaneta.bottomLeft.x;
-    eixoY = boxPlaneta.bottomLeft.y + (boxPlaneta.topLeft.y - boxPlaneta.bottomLeft.y) > boxAsaDireita.bottomLeft.y && boxAsaDireita.bottomLeft.y + (boxAsaDireita.topLeft.y - boxAsaDireita.bottomLeft.y) > boxPlaneta.bottomLeft.y;
 
     return eixoX && eixoY;
 }
@@ -74,7 +17,7 @@ void drawWireBox() {
 
     glPushMatrix();
 
-    glColor3f(0, 0, 0);
+    glColor3f(1, 0, 0);
 
     for (int i = 0; i < 10; i++) {
 

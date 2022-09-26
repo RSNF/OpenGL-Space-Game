@@ -1,8 +1,8 @@
 coordinate quadHP[4] = {
-    {-2.0, 24},
-    {-1.0, 24},
-    {-1.0, 23},
-    {-2.0, 23}
+    {-2.0, 45},
+    {-1.0, 45},
+    {-1.0, 44},
+    {-2.0, 44}
 };
 
 void drawHUD() {
@@ -63,16 +63,15 @@ void drawGameOver() {
     glColor3f(1, 1, 1);
 
     glBegin(GL_QUADS);
-        glVertex2f(-10, 2.5);
-        glVertex2f(10, 2.5);
-        glVertex2f(10, -2.5);
-        glVertex2f(-10, -2.5);
+        glVertex2f(-20, 5.0);
+        glVertex2f(20, 5.0);
+        glVertex2f(20, -5.0);
+        glVertex2f(-20, -5.0);
     glEnd();
 
     glColor3f(1, 0, 0);
 
-    // glRasterPos2i(-s.size()/2 + 2, -0.25);
-    glRasterPos2f(-4, -0.5);
+    glRasterPos2f(-8, -0.5);
 
     for (string::iterator i = s.begin(); i != s.end(); i++) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *i);
@@ -86,16 +85,15 @@ void drawWin() {
     glColor3f(1, 1, 1);
 
     glBegin(GL_QUADS);
-        glVertex2f(-10, 2.5);
-        glVertex2f(10, 2.5);
-        glVertex2f(10, -2.5);
-        glVertex2f(-10, -2.5);
+        glVertex2f(-20, 5.0);
+        glVertex2f(20, 5.0);
+        glVertex2f(20, -5.0);
+        glVertex2f(-20, -5.0);
     glEnd();
 
     glColor3f(1, 0, 0);
 
-    // glRasterPos2i(-s.size()/2 + 2, -0.25);
-    glRasterPos2f(-4, -0.5);
+    glRasterPos2f(-8, -0.5);
 
     for (string::iterator i = s.begin(); i != s.end(); i++) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *i);
