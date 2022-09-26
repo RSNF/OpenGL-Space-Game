@@ -36,7 +36,10 @@ coordinate points[30] = {
     {0, -0.5}
 };
 
-rgbValues coresEstrela = {1, 1, 0};
+std::random_device rd;
+std::mt19937 gen(rd());
+std::uniform_real_distribution<float> distrib(0.0, 1.0);
+rgbValues coresEstrela = {distrib(gen), distrib(gen), distrib(gen)};
 
 coordinate posEstrelas[10];
 
@@ -49,7 +52,7 @@ void drawStar(float x, float y) {
 
         glPushMatrix();
 
-        glColor3f(coresEstrela.r, coresEstrela.g, coresEstrela.b);
+        glColor3f(distrib(gen), distrib(gen), distrib(gen));
 
         glBegin(GL_TRIANGLES);
             glVertex2f(points[i].x + x, points[i].y + y);

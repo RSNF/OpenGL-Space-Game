@@ -2,6 +2,7 @@ using namespace std;
 
 #include <stdlib.h>
 #include <iostream>
+#include <windows.h>
 #include <GL/glut.h>
 #include "includes/types.h"
 #include "includes/star.h"

@@ -34,7 +34,7 @@ bool checkCollisions() {
             return eixoX && eixoY;
         }
     }
-
+    
     return eixoX && eixoY;
 }
 
@@ -74,9 +74,9 @@ void drawWireBox() {
 
     glPushMatrix();
 
-    glColor3f(1, 0, 0);
+    glColor3f(0, 0, 0);
 
-        for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) {
 
         glBegin(GL_LINE_LOOP);
             glVertex2f(boxStars[i].topLeft.x, boxStars[i].topLeft.y);

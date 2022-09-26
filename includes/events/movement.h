@@ -70,22 +70,22 @@ void keyEvent(unsigned char key, int x, int y) {
 
     switch (key) {
         case 'w':
-            if (boxBico.topLeft.y != 25) {
+            if (boxBico.topLeft.y < 25) {
                 moveY(0.5);
             }
             break;
         case 's':
-            if (boxCorpo.bottomLeft.y != -25) {
+            if (boxCorpo.bottomLeft.y > -25) {
                 moveY(-0.5);
             }
             break;
         case 'a':
-            if (boxAsaEsquerda.bottomLeft.x != -25) {
+            if (boxAsaEsquerda.bottomLeft.x > -25) {
                 moveX(-0.5);
             }
             break;
         case 'd':
-            if (boxAsaDireita.bottomRight.x != 25) {
+            if (boxAsaDireita.bottomRight.x < 25) {
                 moveX(0.5);
             }
             break;
@@ -114,16 +114,24 @@ void keyEventSpecial(int key, int x, int y) {
 
     switch (key) {
         case GLUT_KEY_UP:
-            moveY(0.5);
+            if (boxBico.topLeft.y < 25) {
+                moveY(0.5);
+            }
             break;
         case GLUT_KEY_DOWN:
-            moveY(-0.5);
+            if (boxCorpo.bottomLeft.y > -25) {
+                moveY(-0.5);
+            }
             break;
         case GLUT_KEY_LEFT:
-            moveX(-0.5);
+            if (boxAsaEsquerda.bottomLeft.x > -25) {
+                moveX(-0.5);
+            }
             break;
         case GLUT_KEY_RIGHT:
-            moveX(0.5);
+            if (boxAsaDireita.bottomRight.x < 25) {
+                moveX(0.5);
+            }
             break;
         default:
             break;

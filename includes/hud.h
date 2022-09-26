@@ -6,7 +6,7 @@ coordinate quadHP[4] = {
 };
 
 void drawHUD() {
-
+    glColor3f(1, 0, 0);
     if (vidas == 1) {
         glBegin(GL_QUADS);
             glVertex2f(quadHP[0].x + 1.5, quadHP[0].y);
@@ -71,7 +71,8 @@ void drawGameOver() {
 
     glColor3f(1, 0, 0);
 
-    glRasterPos2i(-s.size()/2 + 2, -0.25);
+    // glRasterPos2i(-s.size()/2 + 2, -0.25);
+    glRasterPos2f(-4, -0.5);
 
     for (string::iterator i = s.begin(); i != s.end(); i++) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *i);
@@ -93,7 +94,8 @@ void drawWin() {
 
     glColor3f(1, 0, 0);
 
-    glRasterPos2i(-s.size()/2 + 2, -0.25);
+    // glRasterPos2i(-s.size()/2 + 2, -0.25);
+    glRasterPos2f(-4, -0.5);
 
     for (string::iterator i = s.begin(); i != s.end(); i++) {
         glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *i);
