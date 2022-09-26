@@ -1,3 +1,12 @@
+/*
+ * Definição da função de colisão e da função que desenha os bounding boxes
+ * A função checkCollision vai estar checando se os eixos X e Y ambos se sobrepõe
+ * Ao acontecer a sobreposição de ambos aconteceu a colisão, esse tipo de colisão é chamado de AABB
+ * Caso aconteça a sobreposição de ambos, isso quer dizer que eixoX e eixoY são true, o que faz a condição logo abaixo verdadeira
+ * A variável isColidindo é definida em foguete.h, mas é usada aqui para definir que está acontecendo a colisão e depois é usada em movement.h
+ * A função também devolve a operação lógica E das duas variáveis que será usada também em movement.h para checar se o foguete colidiu com o planeta
+ */
+
 bool checkCollision(boundingBox boxOne, boundingBox boxTwo) {
 
     bool eixoX;

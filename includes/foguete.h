@@ -1,3 +1,9 @@
+/*
+ * Definição das structs dos bounding boxes e vertices e cores do foguete
+ * Definição das vidas e variáveis isColidindo e noPlaneta usadas para verificar colisões
+ * Definição da função que reinstaura o foguete na posição inicial
+ */
+
 boundingBox boxBico = {
     {-1.0, -32.0},
     {1.0, -32.0},

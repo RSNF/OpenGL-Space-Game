@@ -1,4 +1,7 @@
-#include <math.h>
+/*
+ * Definição do bounding box que cobre o planeta
+ * Definição que desenha o planeta
+ */
 
 boundingBox boxPlaneta = {
     {-2, 42},

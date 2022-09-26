@@ -9,7 +9,6 @@
 
 using namespace std;
 
-#include <iostream>
 #include <stdlib.h>
 #include <GL/glut.h>
 #include "includes/types.h"
@@ -59,7 +58,7 @@ void drawGame() {
         drawStars();
         drawFoguete();
         drawHUD();
-        drawWireBox();
+        // drawWireBox(); // Descomentar linha para mostrar os hitboxes
         drawCircle();
     } else {
         drawWin();

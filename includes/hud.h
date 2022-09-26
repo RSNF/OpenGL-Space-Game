@@ -1,3 +1,9 @@
+/*
+ * Definição da struct de vertices da HUD de vida do foguete
+ * Definição do desenho das vidas na tela
+ * Definção das funções de resposta que desenham texto de vitória ou derrota no jogo
+ */
+
 coordinate quadHP[4] = {
     {-2.0, 45},
     {-1.0, 45},

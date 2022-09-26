@@ -1,3 +1,12 @@
+/*
+ * Declaração de funções de movimento e eventos 
+ * As funções moveY e moveX movem todos os bounding boxes e foguete incrementando ou decrementando dos vertices y ou x
+ * Essas duas funções são chamadas apenas se as teclas definidas no switch forem apertadas
+ * Caso o bounding box do foguete esteja batendo em alguma das bordas da tela a função que vai para respectiva direção não será chamada
+ * O evento de movimento também checa se houve colisão (dano) ou se o foguete atingiu o objetivo (planeta)
+ * Isso é feito a partir de operações lógica usando as variáveis isColidindo e noPlaneta
+ */
+
 void moveY(float y) {
 
     corpo[0].y+=y;
@@ -92,7 +101,7 @@ void keyEvent(unsigned char key, int x, int y) {
             }
             break;
         default:
-            break;
+            return;
     }
 
     for (int i = 0; i < 10; i++) {
@@ -147,7 +156,7 @@ void keyEventSpecial(int key, int x, int y) {
             }
             break;
         default:
-            break;
+            return;
     }
 
     for (int i = 0; i < 10; i++) {

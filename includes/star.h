@@ -1,3 +1,10 @@
+/*
+ * Definição dos vertices, bounding box e cores da estrela
+ * Função que cria a estrela, inicialmente no centro da tela e depois a move para algum lugar aleatório
+ * A aleatoriedade nesse caso é decidida não por rand() e sim por um conjunto de outras ferramentas definidas em random.h
+ * Isso dévido à natureza não tão aleatória de rand()
+ */
+
 #include <random>
 #include <math.h>
 
@@ -39,6 +46,7 @@ coordinate points[30] = {
 std::random_device rd;
 std::mt19937 gen(rd());
 std::uniform_real_distribution<float> distrib(0.0, 1.0);
+
 rgbValues coresEstrela = {distrib(gen), distrib(gen), distrib(gen)};
 
 coordinate posEstrelas[10];
@@ -66,8 +74,6 @@ void drawStar(float x, float y) {
 
 void drawStars() {
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribX(-45, 45);
     std::uniform_int_distribution<int> distribY(-30, 30);
 
