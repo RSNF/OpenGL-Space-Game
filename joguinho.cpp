@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize(800, 800);
-    glutCreateWindow("Desafio dos obstaculos");
+    glutCreateWindow("Space Game");
     init();
 
     glutDisplayFunc(drawGame);
